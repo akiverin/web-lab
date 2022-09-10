@@ -1,0 +1,72 @@
+@use "../utils/mixins" as m;
+@use "../utils/variables" as v;
+
+.articles {
+    background-color: #fdf6ec;
+}
+
+.articles__wrapper {
+    @include m.wrapper;
+    justify-content: space-between;
+}
+
+.articles__title {
+    padding: 40px 0 14px;
+    font-size: 4.4rem;
+    text-align: center;
+}
+
+.articles__description {
+    padding-bottom: 60px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.news__list {
+    list-style: none;
+}
+
+.news__item {
+    padding: 16px 0 24px;
+    border-top: 1.4px solid black;
+    display: grid;
+    grid-template-columns: 2fr 1fr 200px;
+    gap: 20px;
+}
+
+.news__title {
+    font-size: 3.8rem;
+    line-height: normal;
+}
+
+.news__date {
+    font-size: 1.4rem;
+    margin-top: 8px;
+    color: v.$mytext;
+}
+
+.news__description {
+    font-size: 1.5rem;
+    line-height: 150%;
+    width: 80%;
+    margin: 10px 0 28px;
+}
+
+.news__image {
+    object-fit: cover;
+    height: 160px;
+    width: 200px;
+}
+
+.news__link {
+    padding: 10px 16px;
+    border: 1.4px solid v.$mytext;
+    border-radius: 28px;
+    color: v.$mytext;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 1.2rem;
+    &:hover {
+        border: 2px solid black;
+    }
+}

@@ -1,0 +1,42 @@
+@use "../utils/mixins" as m;
+@use "../utils/variables" as v;
+
+.home {
+    background-color: #fdf6ec;
+    padding: 80px 0;
+    // height: calc(100vh - 140px - 60px);
+}
+
+.home__wrapper {
+    @include m.wrapper;
+    justify-content: space-between;
+}
+
+.home__title {
+    @include m.reset;
+    font-size: 6.4rem;
+    font-weight: 500;
+    margin-bottom: 32px;
+    @media screen and (max-width: 480px) {
+        font-size: 4.4rem;
+    }
+}
+
+.home__subtitle {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 135%;
+    margin-bottom: 56px;
+}
+
+.home__link {
+    padding: 12px 18px;
+    background-color: v.$mytext;
+    color: v.$mywhite;
+    text-decoration: none;
+    font-size: 1.4rem;
+    border-radius: 1px;
+    &:hover {
+        background-color: #312f2ce4;
+    }
+}

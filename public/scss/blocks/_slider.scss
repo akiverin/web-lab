@@ -1,0 +1,88 @@
+@use "../utils/mixins" as m;
+@use "../utils/variables" as v;
+
+.slider {
+    margin-top: 80px;
+}
+
+.slider__wrapper {
+    width: 84%;
+    overflow: hidden;
+    // overflow-x: scroll;
+}
+
+.slider__item{
+    position: relative;
+    width: 380px;
+}
+
+.slider__link {
+    color: v.$mytext;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    margin-right: 40px;
+    &_end {
+        position: absolute;
+        font-size: 1.2rem;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+
+    }
+    &:hover{
+        background-color: rgba(231, 195, 149, 0.12);
+    }
+}
+
+.slider__info {
+    height: 140px;
+    width: 160px;
+    margin-right: 20px;
+}
+
+.slider__date {
+    background-color: #c1deba;
+    font-size: 1.25rem;
+    padding: 4px 0;
+    margin-bottom: 6px;
+    width: 80px;
+    text-align: center;
+}
+
+.slider__title {
+    font-size: 2.4rem;
+    margin-bottom: 4px;
+}
+
+.slider__description {
+    font-size: 1.2rem;
+}
+
+.slider__image {
+    height: 140px;
+    width: 160px;
+    object-fit: cover;
+}
+
+.slider__button {
+    border: none;
+    background-color: none;
+    margin-right: 2px;
+    margin-top: 6px;
+}
+
+.slider__icon {
+    height: 16px; 
+    width: 16px; 
+    fill: coral;
+    cursor: pointer;
+    &:hover{
+        fill: rgba(240, 109, 62, 0.83);
+    }
+}
+
+.slider__button:disabled .slider__icon {
+    cursor: default;
+    fill: v.$mytext;
+}
