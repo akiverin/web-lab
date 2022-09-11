@@ -3,8 +3,12 @@
 
 .footer {
     background-color: #f4e8d7e7;
-    height: 140px;
+    height: 180px;
     padding-top: 30px
+}
+
+.footer__logo {
+    height: 40px;
 }
 
 .footer__wrapper {
@@ -15,8 +19,8 @@
 }
 
 .footer__author {
-    font-size: 1.1rem;
-    line-height: normal;
+    font-size: 1.35rem;
+    line-height:150%;
 }
 
 .footer__subtext {
@@ -25,7 +29,7 @@
 
 .footer__navigate ul {
     flex-direction: column;
-    margin-top: 12px;
+    margin-top: 26px;
     & li {
         margin: 0 0 6px 0;
     }

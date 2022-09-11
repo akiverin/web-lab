@@ -12,9 +12,9 @@
                         <img :src="article.preview_image" alt="Slider Item Cover" class="slider__image">
                     </router-link>
                 </li>
-                <li class="slider__item">
+                <!-- <li class="slider__item">
                     <router-link to="/articles" class="slider__link slider__link_end">Далее <svg style="transform:rotate(180deg)" enable-background="new 0 0 50 50" height="20px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="20px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="20" width="20"/><polyline fill="none" points="29.44,35.961   14.04,35.961 14.041,20.56 " stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><line fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" x1="36.628" x2="14.495" y1="13.373" y2="35.505"/></svg></router-link>
-                </li>
+                </li> -->
             </ul>
         </div>
         <div class="slider__action">
@@ -38,6 +38,7 @@ export default {
             articles: [],
             sliderStap: 380,
             sliderKey: 0,
+            sliderNum: 0,
             styleList: {
                 listStyle: 'none',
                 display: 'flex',
@@ -50,6 +51,7 @@ export default {
     },
     methods: {
         addData() {
+            this.sliderNum = Math.max(1,parseInt(document.querySelector(".slider__wrapper").offsetWidth/380))
             axios.get('articles.json')
             .then((response) => { 
                 // this.articles = response.data;
@@ -70,6 +72,7 @@ export default {
         },
         sliderStapLeft(){
             this.sliderKey += this.sliderStap;
+            this.sliderNum -= 1;
             this.styleList.transform = 'translateX('+this.sliderKey+'px)';
             if (this.sliderKey >= 0){
                 this.buttonLeftDisabled = 1
@@ -82,11 +85,12 @@ export default {
         },
         sliderStapRight(){
             this.sliderKey -= this.sliderStap;
+            this.sliderNum += 1;
             this.styleList.transform = 'translateX('+this.sliderKey+'px)';
-            if (this.sliderKey < (this.articles.length-3)*this.sliderStap*-1){
-                this.buttonRightDisabled = 1
-            } else {
+            if (this.sliderNum < this.articles.length){
                 this.buttonRightDisabled = 0
+            } else {
+                this.buttonRightDisabled = 1
             }
             if (this.sliderKey >= 0){
                 this.buttonLeftDisabled = 1

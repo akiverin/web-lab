@@ -1,13 +1,17 @@
 <template>
-    <main class="article">
-        <div class="article__wrapper">
-            <p class="article__date">{{article.date}}</p>
-            <h2 class="article__title">{{article.name}}</h2>
-            <div class="article__info">
-                <p class="article__text">{{article.desc}}</p>
-                <img class="article__image" :src="article.full_image" alt="">
+    <main>
+        <section class="article">
+            <div class="article__wrapper">
+                <p class="article__date">{{article.date}}</p>
+                <h2 class="article__title">{{article.name}}</h2>
+                <div class="article__info">
+                    <div class="article__text">
+                        <p v-for="paragraph in this.article.desc" :key="paragraph.id" class="article__paragraph">{{paragraph}}<br><br></p>
+                    </div>
+                    <img class="article__image" :src="article.full_image" alt="">
+                </div>
             </div>
-        </div>
+        </section>
     </main>
 </template>
 
@@ -25,7 +29,11 @@ export default {
     methods: {
         addData() {
             axios.get('../articles.json')
-            .then((response) => { this.article = response.data[this.id-1]})
+            .then((response) => { 
+                this.article = response.data[this.id-1];
+                this.article.desc = this.article.desc.split('\n');
+                }
+                )
             .catch((error) => {
                 throw error.response.data;
             });

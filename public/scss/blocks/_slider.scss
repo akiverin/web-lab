@@ -6,7 +6,7 @@
 }
 
 .slider__wrapper {
-    width: 84%;
+    // width: 1140px;
     overflow: hidden;
     // overflow-x: scroll;
 }
@@ -14,6 +14,11 @@
 .slider__item{
     position: relative;
     width: 380px;
+}
+
+.slider__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .slider__link {
@@ -51,7 +56,7 @@
 }
 
 .slider__title {
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     margin-bottom: 4px;
 }
 
@@ -60,7 +65,7 @@
 }
 
 .slider__image {
-    height: 140px;
+    height: 160px;
     width: 160px;
     object-fit: cover;
 }

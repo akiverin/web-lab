@@ -17,6 +17,7 @@
     font-size: 2.4rem;
     color: black;
     text-decoration: none;
+    height: 40px;
 }
 
 .navigate__list {
@@ -25,7 +26,9 @@
 }
 
 .navigate__item {
-    margin-left: 24px;
+    margin-left: 16px;
+    padding: 4px 6px;
+    background-color: #905b11;
 }
 
 .navigate__link {

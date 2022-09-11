@@ -1,9 +1,11 @@
 <template>
-    <main class="articles">
-        <div class="articles__wrapper">
-            <ArticlesHero></ArticlesHero>
-            <ArticlesList></ArticlesList>
-        </div>
+    <main>
+        <section class="articles">
+            <div class="articles__wrapper">
+                <ArticlesHero></ArticlesHero>
+                <ArticlesList></ArticlesList>
+            </div>
+        </section>
     </main>
 </template>
 

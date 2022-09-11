@@ -3,6 +3,7 @@ import { createWebHashHistory, createRouter } from "vue-router";
 import Home from "@/pages/Home.vue";
 import Articles from "@/pages/Articles.vue";
 import Article from "@/pages/Article.vue";
+import Gallery from "@/pages/Gallery.vue";
 
 
 const routes = [
@@ -21,7 +22,12 @@ const routes = [
     name: "article",
     component: Article,
     props: true,
-  }
+  },
+  {
+    path: "/gallery",
+    name: "Gallery",
+    component: Gallery,
+  },
 ];
 
 const router = createRouter({

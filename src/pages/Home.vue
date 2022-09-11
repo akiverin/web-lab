@@ -1,19 +1,18 @@
 <template>
-  <section class="home">
-    <div class="home__wrapper">
-        <h1 class="home__title">Добро пожаловать!</h1>
-        <h2 class="home__subtitle">Читайте самые актуальные новости на нашем сайте.</h2>
-        <router-link to="/articles" class="home__link">Перейти к статьям</router-link>
-        <HomeSlider></HomeSlider>
-    </div>
-  </section>
+  <main>
+    <section class="home">
+      <div class="home__wrapper">
+          <HomeHero></HomeHero>
+      </div>
+    </section>
+  </main>
 </template>
 
 <script>
-import HomeSlider from '@/components/HomeSlider.vue';
+import HomeHero from '@/components/HomeHero.vue';
 export default {
     name: "HomePage",
-    components: { HomeSlider }
+    components: { HomeHero }
 }
 </script>
 

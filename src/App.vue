@@ -1,20 +1,20 @@
 <template>
-  <TheHeader></TheHeader>
-  <main>
-    <router-view></router-view>
-  </main>
-  <TheFooter></TheFooter>
+  <v-app>
+      <TheHeader></TheHeader>
+      <router-view/>
+      <TheFooter></TheFooter>
+  </v-app>
 </template>
 
 <script>
-import TheHeader from "@/components/TheHeader.vue";
-import TheFooter from "@/components/TheFooter.vue";
+import TheHeader from './components/TheHeader.vue';
+import TheFooter from './components/TheFooter.vue';
 
 export default {
-  name: 'App',
-  components: { TheHeader, TheFooter }
+    name: "App",
+    data: () => ({
+    //
+    }),
+    components: { TheHeader, TheFooter }
 }
 </script>
-
-<style>
-</style>

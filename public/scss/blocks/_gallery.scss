@@ -1,0 +1,36 @@
+@use "../utils/mixins" as m;
+@use "../utils/variables" as v;
+
+.gallery {
+    background-color: #fdf6ec;
+}
+
+.gallery__wrapper {
+    @include m.wrapper;
+    justify-content: space-between;
+}
+
+.gallery__title {
+    padding: 40px 0 14px;
+    font-size: 4.4rem;
+    text-align: center;
+}
+
+.gallery__description {
+    padding-bottom: 60px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.gallery__list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    gap: 20px;
+}
+
+.gallery__image {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+}
