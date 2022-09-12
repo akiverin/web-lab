@@ -1,0 +1,90 @@
+@use "../utils/mixins" as m;
+@use "../utils/variables" as v;
+
+.comments__title {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    @media screen and (max-width: 480px) {
+        font-size: 2.2rem;
+    }
+}
+
+.comments__list {
+    list-style: none;
+}
+
+.comments__item {
+    border-bottom: 1.6px solid black;
+    padding: 10px 6px;
+    margin-top: 16px;
+}
+
+.comments__author {
+    display: flex;
+    font-size: 2rem;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.comments__avatar {
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    margin-right: 16px;
+}
+
+.comments__text {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.comments__form {
+    margin-top: 24px;
+    padding-bottom: 40px;
+}
+
+.comments__field {
+    display: flex;
+    flex-direction: column;
+    border: 1.6px solid black;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+}
+
+.comments__input {
+    padding: 4px;
+    font-size: 1.6rem;
+    border-bottom: 1.6px solid transparent;
+    outline: none;
+    &:focus {
+        border-color: #E7C4B1;
+    }
+}
+
+.comments__textarea {
+    font-size: 1.6rem;
+    height: 140px;
+    outline: none;
+    padding: 8px;
+    border: 1.6px solid transparent;
+    &:focus {
+        border-color: #E7C4B1;
+    }
+}
+
+.comments__label {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.comments__button {
+    height: 40px;
+    width: 160px;
+    font-size: 1.45rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: 1.6px solid black;
+    &:hover {
+        font-weight: 600;
+    }
+}

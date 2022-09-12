@@ -2,7 +2,7 @@
     <header class="header">
         <div class="header__wrapper">
             <a href="/" class="header__logo">
-                <svg width="60" height="40" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="66" height="44" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="100" height="100" fill="#C1DEBA"/>
                     <rect x="100" y="100" width="100" height="100" fill="#E7C4B1"/>
                     <rect x="200" width="100" height="200" fill="#B1CDE7"/>
@@ -20,7 +20,7 @@
                         <router-link to="/articles" class="navigate__link">Новости</router-link>
                     </li>
                     <li class="navigate__item">
-                        <router-link to="/gallery" class="navigate__link">Галлерея</router-link>
+                        <router-link to="/gallery" class="navigate__link">Галерея</router-link>
                     </li>
                 </ul>
             </nav>

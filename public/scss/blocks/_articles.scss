@@ -14,12 +14,19 @@
     padding: 40px 0 14px;
     font-size: 4.4rem;
     text-align: center;
+    @media screen and (max-width: 480px) {
+        font-size: 3.4rem;
+    }
 }
 
 .articles__description {
     padding-bottom: 60px;
     font-size: 1.8rem;
     text-align: center;
+    @media screen and (max-width: 480px) {
+        font-size: 1.5rem;
+        line-height: 140%;
+    }
 }
 
 .news__list {
@@ -45,9 +52,12 @@
 }
 
 .news__title {
-    font-size: 3.8rem;
+    font-size: 3.3rem;
     line-height: normal;
     @media screen and (max-width: 720px) { 
+        font-size: 2.9rem;
+    }
+    @media screen and (max-width: 480px) {
         font-size: 2.4rem;
     }
 }
@@ -61,10 +71,11 @@
 .news__description {
     font-size: 1.5rem;
     line-height: 150%;
-    margin: 10px 0 28px;
+    margin: 10px 0 20px;
     @media screen and (max-width: 480px) {
         margin: 0 0 28px;
-        font-size: 1.35rem;
+        font-size: 1.5rem;
+        line-height: 140%;
     }
 }
 
@@ -81,14 +92,24 @@
 }
 
 .news__link {
-    padding: 10px 16px;
-    border: 1.4px solid v.$mytext;
-    border-radius: 28px;
+    display: flex;
+    width: 114px;
+    align-items: flex-start;
+    justify-content: space-between;
     color: v.$mytext;
     font-weight: 500;
+    letter-spacing: 140%;
     text-decoration: none;
-    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-size: 1.32rem;
     &:hover {
-        border: 2px solid black;
+        font-weight: 600;
+        font-size: 1.28rem;
+        text-decoration: underline;
     }
+}
+
+.news__icon {
+    height: 12px;
+    width: 12px;
 }

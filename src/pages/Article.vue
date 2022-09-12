@@ -10,6 +10,7 @@
                     </div>
                     <img class="article__image" :src="article.full_image" alt="">
                 </div>
+                <ArticleComments></ArticleComments>
             </div>
         </section>
     </main>
@@ -17,31 +18,32 @@
 
 <script>
 import axios from 'axios'
+import ArticleComments from '@/components/ArticleComments.vue';
 
 export default {
     name: "ArticlePage",
     props: ["id"],
-    data(){
+    data() {
         return {
             article: {},
-        }
+        };
     },
     methods: {
         addData() {
-            axios.get('../articles.json')
-            .then((response) => { 
-                this.article = response.data[this.id-1];
-                this.article.desc = this.article.desc.split('\n');
-                }
-                )
-            .catch((error) => {
+            axios.get("../articles.json")
+                .then((response) => {
+                this.article = response.data[this.id - 1];
+                this.article.desc = this.article.desc.split("\n");
+            })
+                .catch((error) => {
                 throw error.response.data;
             });
         }
     },
     mounted() {
         this.addData();
-    }
+    },
+    components: { ArticleComments }
 }
 </script>
 

@@ -21,10 +21,17 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 48px;
+    @media screen and (max-width: 900px){
+        grid-template-columns: 1fr; 
+        gap: 16px;   
+    }
 }
 
 .article__image {
     width: 100%;
+    @media screen and (max-width: 900px){
+        grid-row: 1;  
+    }
 }
 
 .article__title {

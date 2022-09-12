@@ -7,7 +7,6 @@
             <ArticlesItem :article="article"></ArticlesItem>
         </li>
     </ul>
-    
 </div>
 </template>
 

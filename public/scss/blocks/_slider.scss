@@ -58,6 +58,9 @@
 .slider__title {
     font-size: 1.6rem;
     margin-bottom: 4px;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .slider__description {
@@ -80,10 +83,10 @@
 .slider__icon {
     height: 16px; 
     width: 16px; 
-    fill: coral;
+    fill: #B1CDE7;
     cursor: pointer;
     &:hover{
-        fill: rgba(240, 109, 62, 0.83);
+        fill: #a0bdd9;
     }
 }
 

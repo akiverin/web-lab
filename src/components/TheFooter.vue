@@ -19,6 +19,9 @@
                         <li class="navigate__item">
                             <router-link to="/articles" class="navigate__link">Новости</router-link>
                         </li>
+                        <li class="navigate__item">
+                            <router-link to="/gallery" class="navigate__link">Галерея</router-link>
+                        </li>
                     </ul>
                 </nav>
             </div>
