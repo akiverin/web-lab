@@ -1,10 +1,17 @@
 <template>
 <div class="articles__news news">
-    <v-text-field outlined prepend-inner-icon="mdi-magnify" clearable label="Поиск по новостям" placeholder="Начните вводить название или текст статьи" v-model="search">
-    </v-text-field>
-    <ul class="news__list">
+    <div class="news__navigate">
+        <v-text-field outlined  :append-icon="!tileActive ? 'mdi-grid' : 'mdi-view-agenda-outline'" @click:append="onTile" prepend-inner-icon="mdi-magnify" clearable label="Поиск по новостям" placeholder="Начните вводить название или текст статьи" v-model="search">
+        </v-text-field> 
+    </div>
+    <ul class="news__list" v-if="!this.tileActive">
         <li class="news__item" v-for="article in filteredArticles" :key="article.id">
             <ArticlesItem :article="article"></ArticlesItem>
+        </li>
+    </ul>
+    <ul class="news__list_tile" v-if="this.tileActive">
+        <li class="news__item_tile" v-for="article in filteredArticles" :key="article.id">
+            <ArticlesTile :article="article"></ArticlesTile>
         </li>
     </ul>
 </div>
@@ -13,6 +20,7 @@
 <script>
 import axios from 'axios'
 import ArticlesItem from './ArticlesItem.vue';
+import ArticlesTile from './ArticlesTile.vue';
 
 export default {
     name: "ArticlesListComponent",
@@ -20,6 +28,7 @@ export default {
         return {
             articles: [],
             search: "",
+            tileActive: false,
         };
     },
     methods: {
@@ -31,6 +40,9 @@ export default {
                 
             });
         },
+        onTile(){
+            this.tileActive = !this.tileActive;
+        }
     },
     mounted() {
         this.addData();
@@ -44,7 +56,7 @@ export default {
             );
         }
     },
-    components: { ArticlesItem }
+    components: { ArticlesItem, ArticlesTile }
 }
 </script>
 
@@ -65,5 +77,8 @@ export default {
     }
     .v-field--variant-filled .v-field__outline::after, .v-field--variant-underlined .v-field__outline::after {
         border-style: none;
+    }
+    .v-input__append {
+        font-size: 1.8rem;
     }
 </style>

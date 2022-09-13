@@ -47,7 +47,7 @@
         grid-template-rows: repeat(auto-fit, minmax(120px, 1fr));
         gap: 10px;
     }
-    @media screen and (max-width: 450px){
+    @media screen and (max-width: 480px){
         grid-template-columns: 1fr;
         grid-template-rows: repeat(auto-fit, minmax(120px, 1fr));
         gap: 10px;
@@ -56,6 +56,22 @@
 
 .gallery__item {
     position: relative;
+    @media screen and (max-width: 550px) {
+        &::after {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            z-index: 0;
+            display: block;
+            width: 100%;
+            height: 100%;   
+            opacity: 0.4;
+            background: linear-gradient(transparent, black);
+        }
+        & .gallery__info {
+            visibility: visible;
+        }
+    }
     &:nth-child(6n) {
         grid-column: span 2;
         grid-row: span 2;
@@ -76,7 +92,7 @@
             visibility: visible;
         }
     }
-    @media screen and (max-width: 430px){
+    @media screen and (max-width: 480px){
         width: 100%;
         &:nth-child(6n) {
             grid-column: span 1;

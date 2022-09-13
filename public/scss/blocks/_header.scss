@@ -37,7 +37,9 @@
 
 .navigate__item {
     margin-left: 16px;
-    
+    @media screen and (max-width: 480px) {
+        margin-left: 6px;
+    }
 }
 
 .navigate__link {
@@ -53,5 +55,8 @@
         background-position-x: 0px;
         background-repeat: no-repeat;
         border-radius: 2px;
+    }
+    @media screen and (max-width: 480px) {
+        font-size: 0.9rem;
     }
 }
