@@ -1,0 +1,45 @@
+@use "../utils/mixins" as m;
+@use "../utils/variables" as v;
+
+.article {
+    background-color: #fdf6ec;
+    color: v.$mytext;
+}
+
+.article__wrapper {
+    @include m.wrapper;
+    justify-content: space-between;
+    padding-bottom: 40px;
+}
+
+.article__date {
+    font-size: 1.4rem;
+    padding: 24px 0 18px;
+}
+
+.article__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    @media screen and (max-width: 900px){
+        grid-template-columns: 1fr; 
+        gap: 16px;   
+    }
+}
+
+.article__image {
+    width: 100%;
+    @media screen and (max-width: 900px){
+        grid-row: 1;  
+    }
+}
+
+.article__title {
+    font-size: 4rem;
+    margin-bottom: 1.8rem;
+}
+
+.article__text {
+    font-size: 1.55rem;
+    line-height: 2.175rem;
+}
